@@ -1,0 +1,26 @@
+extends layout
+
+block content
+  div.parent_userPf 
+    div.menu_bar
+      ul
+        li<a href="/">Home</a>
+        li 
+            a#profile(href="/usersetting") Hi,#{username}
+            a#logout(href="/api/auth/logout") Log out
+        
+  
+  h1.gap
+  each row in [0,1]
+    .wrapper-grid
+      each column in [0,1,2]
+        .container
+          .banner-img
+          p.name-nav #{petProfileList[row*3+column].petName}
+          div
+            img.profile-img-nav(src="#{petProfileList[row*3+column].picturePath}", alt='profile image')
+          
+          .box-container
+            a.petnav(href = "/petprofile?id=#{petProfileList[row*3+column].id}") Profile
+  footer
+    p Created by the Petty Team
