@@ -1,0 +1,37 @@
+//-login page
+extends layout
+
+block content 
+  div.menu_bar
+      ul
+        li<a href="/">Home</a>
+  br
+  br
+  br
+
+  div.parent_login
+    .div1_login <b>Welcome back!</b>
+    
+      .div2_login
+        form#login(action='/api/auth/login', method='POST')
+          input.login(id="email", name='email',type = "email", placeholder = "Email")
+          input.login(id="password", name='password', type = "password", placeholder = "Password")
+
+          input#check(type='checkbox')     
+          span Remember me
+
+          input.div3_button(type='submit', value="Sign In")
+          if errorMessage
+            p #{errorMessage}
+      
+      .div4_reg 
+        div.login Don't have an account? 
+          a(href = "/register") Sign up
+  br
+  br
+  br
+
+  footer
+    p Created by the Petty Team
+
+  //- script(src="JS/login.js") 

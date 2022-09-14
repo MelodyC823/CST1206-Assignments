@@ -1,0 +1,40 @@
+//- registration page
+extends layout
+
+block content 
+  div.menu_bar
+      ul
+        li<a href="/">Home</a>
+        li<a href="/about">About</a>
+        
+        
+  br
+  br
+  br
+  div.parent_reg
+    .div1_reg <b>Sign Up for Petty</b>
+      div.login Already have an account? 
+        a(href = "/login") Login
+    
+      .div2_reg
+        form#login(action='/api/auth/register', method='POST')
+          input.reg(id = "username",name='username',type = "text", placeholder = "Username")
+          input.reg(id = "userEmail",name='email',type = "email", placeholder = "Email Address")
+          input.reg(id = "userPassword",name='password',type = "password", placeholder = "Password")
+          //- input.reg(id = "petName",name='petName',type = "text", placeholder = "Pet Name")
+          //- input.reg(id = "petAge",name='age',type = "", placeholder = "Pet Age")
+          //- input.reg(id = "petHobbies", name='hobbies',type = "text",  placeholder = "Pet Hobbies")
+          //- input.reg(id = "petFood", name='favorateFood',type = "text", placeholder = "Pet Food")
+          //- input.reg(id = "petBio", name='bio',type = "text",  placeholder = "Pet Bio")
+          //- div.login Upload an image of your pet
+          //- div
+          //- input.img_upload(type="file" id="fileUpload" placeholder = "Upload a picture of your pet")
+  
+          input.div3_button(type='submit', value="Sign Up")
+  br
+  br
+  br
+  footer
+    p Created by the Petty Team
+
+  //- script(src="JS/register.js") 
